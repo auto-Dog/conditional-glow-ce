@@ -182,14 +182,14 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     for iter in range(100):
         inference_optimizer.zero_grad()
         img_cvd_batch = cvd_process(img_t)
-        out,loss = model(img_cvd_batch,img_out)  # 相当于-log p(img_ori|img_cvd(t))
+        out_z,loss = model(img_cvd_batch,img_out)  # 相当于-log p(img_ori|img_cvd(t))
         # loss = inference_criterion(out,img_out)   
         loss.backward()
         inference_optimizer.step()
         if iter%10 == 0:
-            print(out.shape)    # debug
             print(f'Mean Absolute grad: {torch.mean(torch.abs(img_t.grad))}')
-
+    out = model(img_cvd_batch,out_z,reverse=True)
+    print(out.shape)    # debug
     # img_out = img_t.clone()
     # inference_criterion = conditionP()
     # img_cvd_batch = img_cvd.repeat(64,1,1,1)
