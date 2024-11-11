@@ -189,7 +189,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
         if iter%10 == 0:
             print(f'Mean Absolute grad: {torch.mean(torch.abs(img_t.grad))}')
     out,nll = model(img_cvd_batch,out_z,reverse=True)
-    print(out.shape)    # debug
+    # print(out.shape)    # debug
     # img_out = img_t.clone()
     # inference_criterion = conditionP()
     # img_cvd_batch = img_cvd.repeat(64,1,1,1)
@@ -235,7 +235,8 @@ if args.test == True:
 else:
     for i in range(args.epoch):
         print("===========Epoch:{}==============".format(i))
-        sample_enhancement(model,None,i,args) # debug
+        # if i==0:
+        #     sample_enhancement(model,None,i,args) # debug
         train(trainloader, model,criterion,optimizer,lrsch,logger,args,i)
         score, model_save = validate(valloader,model,criterion,optimizer,lrsch,logger,args)
         sample_enhancement(model,None,i,args)
