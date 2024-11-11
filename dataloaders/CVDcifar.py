@@ -89,3 +89,7 @@ class CVDImageNet(ImageFolder):
         img = self.cvd_observer(img)
 
         return img, patch, img_target, patch_target # CVD image, CVD patch, image target, patch target
+    
+class CVDPlace(CVDImageNet):
+    def __init__(self, root: str, split: str = "train", patch_size=4, **kwargs: Any) -> None:
+        super().__init__(root, split, patch_size, **kwargs)
