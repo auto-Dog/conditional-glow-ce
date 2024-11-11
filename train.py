@@ -91,7 +91,7 @@ valloader = torch.utils.data.DataLoader(valset,batch_size=args.batchsize,shuffle
 
 # model = ViT('ColorViT', pretrained=False,image_size=32,patches=4,num_layers=6,num_heads=6,num_classes=4*4*3)
 model = CondGlowModel(args)
-model = nn.DataParallel(model,device_ids=list(range(torch.cuda.device_count())))
+# model = nn.DataParallel(model,device_ids=list(range(torch.cuda.device_count())))
 model = model.cuda()
 
 criterion = nn.MSELoss()
