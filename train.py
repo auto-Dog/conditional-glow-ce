@@ -124,7 +124,7 @@ def train(trainloader, model, criterion, optimizer, lrsch, logger, args, epoch):
         loss_batch.backward()
         loss_logger += loss_batch.item()    # 显示全部loss
         optimizer.step()
-        lrsch.step()
+    lrsch.step()
 
     loss_logger /= len(trainloader)
     print("Train loss:",loss_logger)
