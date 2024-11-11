@@ -1,0 +1,1739 @@
+Train/Acc: 0.6287878787878788
+
+Train/Pos_precision: 0.7122742974824977
+
+Train/Pos_recall: 0.6287878787878788
+
+Train/Pos_F1: 0.5936409790803128
+
+Train/Acc: 0.5795454545454546
+
+Train/Pos_precision: 0.6911612343189963
+
+Train/Pos_recall: 0.5795454545454546
+
+Train/Pos_F1: 0.5377012100851141
+
+Test/Acc: 0.7045454545454546
+
+Test/Pos_precision: 0.6404255856596807
+
+Test/Pos_recall: 0.7045454545454546
+
+Test/Pos_F1: 0.6364455428354442
+
+Train/Acc: 0.9356060606060606
+
+Train/Pos_precision: 0.9462728243978245
+
+Train/Pos_recall: 0.9356060606060606
+
+Train/Pos_F1: 0.9337722248805658
+
+Test/Acc: 0.7689393939393939
+
+Test/Pos_precision: 0.6762864461429056
+
+Test/Pos_recall: 0.7689393939393939
+
+Test/Pos_F1: 0.7067053290610403
+
+Train/Acc: 0.9621212121212122
+
+Train/Pos_precision: 0.9623409172281352
+
+Train/Pos_recall: 0.9621212121212122
+
+Train/Pos_F1: 0.9620665792540793
+
+Test/Acc: 0.8522727272727273
+
+Test/Pos_precision: 0.8880949036301327
+
+Test/Pos_recall: 0.8522727272727273
+
+Test/Pos_F1: 0.8357772892730689
+
+Train/Acc: 0.9545454545454546
+
+Train/Pos_precision: 0.9552366908981212
+
+Train/Pos_recall: 0.9545454545454546
+
+Train/Pos_F1: 0.9543977332559026
+
+Test/Acc: 0.9090909090909091
+
+Test/Pos_precision: 0.932041736197888
+
+Test/Pos_recall: 0.9090909090909091
+
+Test/Pos_F1: 0.9030518854865124
+
+Train/Acc: 0.9734848484848485
+
+Train/Pos_precision: 0.9744475644475645
+
+Train/Pos_recall: 0.9734848484848485
+
+Train/Pos_F1: 0.9734040386685139
+
+Saving5
+Test/Acc: 0.9545454545454546
+
+Test/Pos_precision: 0.9587137511573323
+
+Test/Pos_recall: 0.9545454545454546
+
+Test/Pos_F1: 0.9538689644898797
+
+Train/Acc: 0.9772727272727273
+
+Train/Pos_precision: 0.9778979374844038
+
+Train/Pos_recall: 0.9772727272727273
+
+Train/Pos_F1: 0.9772315675516896
+
+Test/Acc: 0.9696969696969697
+
+Test/Pos_precision: 0.9711222872987578
+
+Test/Pos_recall: 0.9696969696969697
+
+Test/Pos_F1: 0.9695579676553453
+
+Train/Acc: 0.9696969696969697
+
+Train/Pos_precision: 0.9702774251646432
+
+Train/Pos_recall: 0.9696969696969697
+
+Train/Pos_F1: 0.9696375990202211
+
+Test/Acc: 0.9696969696969697
+
+Test/Pos_precision: 0.9702774251646432
+
+Test/Pos_recall: 0.9696969696969697
+
+Test/Pos_F1: 0.9696375990202211
+
+Train/Acc: 0.9772727272727273
+
+Train/Pos_precision: 0.9778979374844038
+
+Train/Pos_recall: 0.9772727272727273
+
+Train/Pos_F1: 0.9772315675516896
+
+Test/Acc: 0.9772727272727273
+
+Test/Pos_precision: 0.9778979374844038
+
+Test/Pos_recall: 0.9772727272727273
+
+Test/Pos_F1: 0.9772315675516896
+
+Train/Acc: 0.9810606060606061
+
+Train/Pos_precision: 0.9814820596070597
+
+Train/Pos_recall: 0.9810606060606061
+
+Train/Pos_F1: 0.9810437551142936
+
+Test/Acc: 0.9810606060606061
+
+Test/Pos_precision: 0.9814820596070597
+
+Test/Pos_recall: 0.9810606060606061
+
+Test/Pos_F1: 0.9810437551142936
+
+Train/Acc: 0.9810606060606061
+
+Train/Pos_precision: 0.9814820596070597
+
+Train/Pos_recall: 0.9810606060606061
+
+Train/Pos_F1: 0.9810437551142936
+
+Saving10
+Test/Acc: 0.9810606060606061
+
+Test/Pos_precision: 0.9814820596070597
+
+Test/Pos_recall: 0.9810606060606061
+
+Test/Pos_F1: 0.9810437551142936
+
+Train/Acc: 0.9810606060606061
+
+Train/Pos_precision: 0.9814820596070597
+
+Train/Pos_recall: 0.9810606060606061
+
+Train/Pos_F1: 0.9810437551142936
+
+Test/Acc: 0.9848484848484849
+
+Test/Pos_precision: 0.9852092352092351
+
+Test/Pos_recall: 0.9848484848484849
+
+Test/Pos_F1: 0.984843747038869
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9850433015199715
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9848569439842524
+
+Test/Acc: 0.9886363636363636
+
+Test/Pos_precision: 0.9887287509238728
+
+Test/Pos_recall: 0.9886363636363636
+
+Test/Pos_F1: 0.9886357716878111
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9850433015199715
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9848569439842524
+
+Test/Acc: 0.9924242424242424
+
+Test/Pos_precision: 0.992609016999261
+
+Test/Pos_recall: 0.9924242424242424
+
+Test/Pos_F1: 0.9924266675037966
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Test/Acc: 0.9924242424242424
+
+Test/Pos_precision: 0.992609016999261
+
+Test/Pos_recall: 0.9924242424242424
+
+Test/Pos_F1: 0.9924266675037966
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886346428548545
+
+Saving15
+Test/Acc: 0.9962121212121212
+
+Test/Pos_precision: 0.9963045084996304
+
+Test/Pos_recall: 0.9962121212121212
+
+Test/Pos_F1: 0.9962115292635687
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.9962121212121212
+
+Test/Pos_precision: 0.9963045084996304
+
+Test/Pos_recall: 0.9962121212121212
+
+Test/Pos_F1: 0.9962115292635687
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890379655188019
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886175607321
+
+Test/Acc: 0.9962121212121212
+
+Test/Pos_precision: 0.9963045084996304
+
+Test/Pos_recall: 0.9962121212121212
+
+Test/Pos_F1: 0.9962115292635687
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Saving20
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962151382402279
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9962910353535352
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.996208083499889
+
+Saving25
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962151382402279
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving30
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving35
+Test/Acc: 1.0
+
+Test/Pos_precision: 1.0
+
+Test/Pos_recall: 1.0
+
+Test/Pos_F1: 1.0
+
+Train/Acc: 0.5681818181818182
+
+Train/Pos_precision: 0.7067466338110204
+
+Train/Pos_recall: 0.5681818181818182
+
+Train/Pos_F1: 0.5780709819477278
+
+Test/Acc: 0.532608695652174
+
+Test/Pos_precision: 0.5793148880105402
+
+Test/Pos_recall: 0.532608695652174
+
+Test/Pos_F1: 0.47546459808632713
+
+Train/Acc: 0.9356060606060606
+
+Train/Pos_precision: 0.9375429728797262
+
+Train/Pos_recall: 0.9356060606060606
+
+Train/Pos_F1: 0.9351239853841823
+
+Test/Acc: 0.6304347826086957
+
+Test/Pos_precision: 0.7237473078476242
+
+Test/Pos_recall: 0.6304347826086957
+
+Test/Pos_F1: 0.5860194628017059
+
+Train/Acc: 0.9583333333333334
+
+Train/Pos_precision: 0.9584558469102478
+
+Train/Pos_recall: 0.9583333333333334
+
+Train/Pos_F1: 0.9583544525300798
+
+Test/Acc: 0.717391304347826
+
+Test/Pos_precision: 0.7406832298136645
+
+Test/Pos_recall: 0.717391304347826
+
+Test/Pos_F1: 0.6931429950413984
+
+Train/Acc: 0.9621212121212122
+
+Train/Pos_precision: 0.9626569128448829
+
+Train/Pos_recall: 0.9621212121212122
+
+Train/Pos_F1: 0.9620436304887524
+
+Test/Acc: 0.7282608695652174
+
+Test/Pos_precision: 0.740387885420718
+
+Test/Pos_recall: 0.7282608695652174
+
+Test/Pos_F1: 0.7168033985280732
+
+Train/Acc: 0.9696969696969697
+
+Train/Pos_precision: 0.9704425204425203
+
+Train/Pos_recall: 0.9696969696969697
+
+Train/Pos_F1: 0.9697223581767591
+
+Saving5
+Test/Acc: 0.7608695652173914
+
+Test/Pos_precision: 0.7894409937888199
+
+Test/Pos_recall: 0.7608695652173914
+
+Test/Pos_F1: 0.7477956825782913
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9855699855699857
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9848537891353375
+
+Test/Acc: 0.8043478260869565
+
+Test/Pos_precision: 0.8564902331442974
+
+Test/Pos_recall: 0.8043478260869565
+
+Test/Pos_F1: 0.7905589071492961
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886346428548545
+
+Test/Acc: 0.8152173913043478
+
+Test/Pos_precision: 0.8808876811594202
+
+Test/Pos_recall: 0.8152173913043478
+
+Test/Pos_F1: 0.8002505056380294
+
+Train/Acc: 0.9810606060606061
+
+Train/Pos_precision: 0.981523785805334
+
+Train/Pos_recall: 0.9810606060606061
+
+Train/Pos_F1: 0.98106491933531
+
+Test/Acc: 0.8152173913043478
+
+Test/Pos_precision: 0.8808876811594202
+
+Test/Pos_recall: 0.8152173913043478
+
+Test/Pos_F1: 0.8002505056380294
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886346428548545
+
+Test/Acc: 0.8152173913043478
+
+Test/Pos_precision: 0.8808876811594202
+
+Test/Pos_recall: 0.8152173913043478
+
+Test/Pos_F1: 0.8002505056380294
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886346428548545
+
+Saving10
+Test/Acc: 0.8260869565217391
+
+Test/Pos_precision: 0.8859286389413988
+
+Test/Pos_recall: 0.8260869565217391
+
+Test/Pos_F1: 0.8134845620667928
+
+Train/Acc: 0.9810606060606061
+
+Train/Pos_precision: 0.9814174531990414
+
+Train/Pos_recall: 0.9810606060606061
+
+Train/Pos_F1: 0.9810235922006317
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Test/Acc: 0.8260869565217391
+
+Test/Pos_precision: 0.8859286389413988
+
+Test/Pos_recall: 0.8260869565217391
+
+Test/Pos_F1: 0.8134845620667928
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Saving15
+Test/Acc: 0.8260869565217391
+
+Test/Pos_precision: 0.8859286389413988
+
+Test/Pos_recall: 0.8260869565217391
+
+Test/Pos_F1: 0.8134845620667928
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.9924884437596301
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924164560240509
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving20
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886346428548545
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving25
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962151382402279
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8914278656126483
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8261008280844616
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving30
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9890895012846233
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886653139381572
+
+Saving35
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9962910353535352
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.996208083499889
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving40
+Test/Acc: 0.8478260869565217
+
+Test/Pos_precision: 0.8974508281573499
+
+Test/Pos_recall: 0.8478260869565217
+
+Test/Pos_F1: 0.8382111935987172
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.9925955438531658
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9923704354990905
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving45
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 1.0
+
+Train/Pos_precision: 1.0
+
+Train/Pos_recall: 1.0
+
+Train/Pos_F1: 1.0
+
+Saving50
+Test/Acc: 0.8586956521739131
+
+Test/Pos_precision: 0.9040760869565218
+
+Test/Pos_recall: 0.8586956521739131
+
+Test/Pos_F1: 0.8499143683453703
+
+Train/Acc: 0.4696969696969697
+
+Train/Pos_precision: 0.5013542185772973
+
+Train/Pos_recall: 0.4696969696969697
+
+Train/Pos_F1: 0.4491944415451878
+
+Test/Acc: 0.5652173913043478
+
+Test/Pos_precision: 0.48253003432494274
+
+Test/Pos_recall: 0.5652173913043478
+
+Test/Pos_F1: 0.5056479113384483
+
+Train/Acc: 0.4356060606060606
+
+Train/Pos_precision: 0.45426063192180133
+
+Train/Pos_recall: 0.4356060606060606
+
+Train/Pos_F1: 0.42904567946221506
+
+Test/Acc: 0.5543478260869565
+
+Test/Pos_precision: 0.6397311212814644
+
+Test/Pos_recall: 0.5543478260869565
+
+Test/Pos_F1: 0.5339757906943496
+
+Train/Acc: 0.4810606060606061
+
+Train/Pos_precision: 0.46676828684347366
+
+Train/Pos_recall: 0.4810606060606061
+
+Train/Pos_F1: 0.4509626776274912
+
+Test/Acc: 0.6086956521739131
+
+Test/Pos_precision: 0.6760869565217391
+
+Test/Pos_recall: 0.6086956521739131
+
+Test/Pos_F1: 0.5363093816121767
+
+Train/Acc: 0.6856060606060606
+
+Train/Pos_precision: 0.6849217219273717
+
+Train/Pos_recall: 0.6856060606060606
+
+Train/Pos_F1: 0.6704168977869704
+
+Test/Acc: 0.6521739130434783
+
+Test/Pos_precision: 0.7179487179487178
+
+Test/Pos_recall: 0.6521739130434783
+
+Test/Pos_F1: 0.6188046742394568
+
+Train/Acc: 0.7272727272727273
+
+Train/Pos_precision: 0.7279402442174127
+
+Train/Pos_recall: 0.7272727272727273
+
+Train/Pos_F1: 0.7120078059009048
+
+Test/Acc: 0.6521739130434783
+
+Test/Pos_precision: 0.7111243136195876
+
+Test/Pos_recall: 0.6521739130434783
+
+Test/Pos_F1: 0.6145077098141469
+
+Train/Acc: 0.7727272727272727
+
+Train/Pos_precision: 0.7881714555636038
+
+Train/Pos_recall: 0.7727272727272727
+
+Train/Pos_F1: 0.7593885379188958
+
+Test/Acc: 0.6521739130434783
+
+Test/Pos_precision: 0.7138960527500224
+
+Test/Pos_recall: 0.6521739130434783
+
+Test/Pos_F1: 0.605607378479992
+
+Train/Acc: 0.5492424242424242
+
+Train/Pos_precision: 0.7509281122917486
+
+Train/Pos_recall: 0.5492424242424242
+
+Train/Pos_F1: 0.572833266885646
+
+Test/Acc: 0.18478260869565216
+
+Test/Pos_precision: 0.23369565217391305
+
+Test/Pos_recall: 0.18478260869565216
+
+Test/Pos_F1: 0.08592132505175984
+
+Train/Acc: 0.8977272727272727
+
+Train/Pos_precision: 0.9057785498463464
+
+Train/Pos_recall: 0.8977272727272727
+
+Train/Pos_F1: 0.8956753995652826
+
+Test/Acc: 0.5217391304347826
+
+Test/Pos_precision: 0.6673023137554029
+
+Test/Pos_recall: 0.5217391304347826
+
+Test/Pos_F1: 0.5191185089273546
+
+Train/Acc: 0.9583333333333334
+
+Train/Pos_precision: 0.9599775224775224
+
+Train/Pos_recall: 0.9583333333333334
+
+Train/Pos_F1: 0.9581190694827058
+
+Test/Acc: 0.7065217391304348
+
+Test/Pos_precision: 0.8629008459571119
+
+Test/Pos_recall: 0.7065217391304348
+
+Test/Pos_F1: 0.6826308388968236
+
+Train/Acc: 0.9621212121212122
+
+Train/Pos_precision: 0.962440866213732
+
+Train/Pos_recall: 0.9621212121212122
+
+Train/Pos_F1: 0.9622014643609749
+
+Test/Acc: 0.7934782608695652
+
+Test/Pos_precision: 0.8805660349056109
+
+Test/Pos_recall: 0.7934782608695652
+
+Test/Pos_F1: 0.7708603952012567
+
+Train/Acc: 0.9734848484848485
+
+Train/Pos_precision: 0.9740312783128265
+
+Train/Pos_recall: 0.9734848484848485
+
+Train/Pos_F1: 0.9735902833568417
+
+Saving5
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8872124252559036
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8301179216104917
+
+Train/Acc: 0.9772727272727273
+
+Train/Pos_precision: 0.9776334776334775
+
+Train/Pos_recall: 0.9772727272727273
+
+Train/Pos_F1: 0.9772679894631114
+
+Test/Acc: 0.8152173913043478
+
+Test/Pos_precision: 0.8835892368501064
+
+Test/Pos_recall: 0.8152173913043478
+
+Test/Pos_F1: 0.8014552059441415
+
+Train/Acc: 0.9924242424242424
+
+Train/Pos_precision: 0.992609016999261
+
+Train/Pos_recall: 0.9924242424242424
+
+Train/Pos_F1: 0.9924266675037966
+
+Test/Acc: 0.8043478260869565
+
+Test/Pos_precision: 0.8590662055335968
+
+Test/Pos_recall: 0.8043478260869565
+
+Test/Pos_F1: 0.7907733061386927
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9850015753216974
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9848357797632356
+
+Test/Acc: 0.8152173913043478
+
+Test/Pos_precision: 0.8593717495319326
+
+Test/Pos_recall: 0.8152173913043478
+
+Test/Pos_F1: 0.8062363676021521
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9857202108292225
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9849362199231538
+
+Test/Acc: 0.8260869565217391
+
+Test/Pos_precision: 0.8689613526570048
+
+Test/Pos_recall: 0.8260869565217391
+
+Test/Pos_F1: 0.8182251318927066
+
+Train/Acc: 0.9772727272727273
+
+Train/Pos_precision: 0.9780001744287458
+
+Train/Pos_recall: 0.9772727272727273
+
+Train/Pos_F1: 0.9773374269585945
+
+Saving10
+Test/Acc: 0.8260869565217391
+
+Test/Pos_precision: 0.8689613526570048
+
+Test/Pos_recall: 0.8260869565217391
+
+Test/Pos_F1: 0.8182251318927066
+
+Train/Acc: 0.9848484848484849
+
+Train/Pos_precision: 0.9855184498041641
+
+Train/Pos_recall: 0.9848484848484849
+
+Train/Pos_F1: 0.9848255360831581
+
+Test/Acc: 0.8369565217391305
+
+Test/Pos_precision: 0.8833472019970877
+
+Test/Pos_recall: 0.8369565217391305
+
+Test/Pos_F1: 0.8287160618209767
+
+Train/Acc: 0.9962121212121212
+
+Train/Pos_precision: 0.9963045084996304
+
+Train/Pos_recall: 0.9962121212121212
+
+Train/Pos_F1: 0.9962115292635687
+
+Test/Acc: 0.7934782608695652
+
+Test/Pos_precision: 0.8509991898460708
+
+Test/Pos_recall: 0.7934782608695652
+
+Test/Pos_F1: 0.7769417491770989
+
+Train/Acc: 0.9886363636363636
+
+Train/Pos_precision: 0.9887287509238728
+
+Train/Pos_recall: 0.9886363636363636
+
+Train/Pos_F1: 0.9886357716878111
+
+Test/Acc: 0.8043478260869565
+
+Test/Pos_precision: 0.8768115942028984
+
+Test/Pos_recall: 0.8043478260869565
+
+Test/Pos_F1: 0.7865278152849041
+
+Train/Acc: 0.39015151515151514
+
+Train/Pos_precision: 0.8367458367458367
+
+Train/Pos_recall: 0.39015151515151514
+
+Train/Pos_F1: 0.38042011396243375
+
+Test/Acc: 0.18478260869565216
+
+Test/Pos_precision: 0.20108695652173914
+
+Test/Pos_recall: 0.18478260869565216
+
+Test/Pos_F1: 0.0852311939268461
+
+Train/Acc: 0.9053030303030303
+
+Train/Pos_precision: 0.926626353073427
+
+Train/Pos_recall: 0.9053030303030303
+
+Train/Pos_F1: 0.9019125729190467
+
+Test/Acc: 0.532608695652174
+
+Test/Pos_precision: 0.7828674948240165
+
+Test/Pos_recall: 0.532608695652174
+
+Test/Pos_F1: 0.5206140490222554
+
+Train/Acc: 0.9318181818181818
+
+Train/Pos_precision: 0.9380998051113693
+
+Train/Pos_recall: 0.9318181818181818
+
+Train/Pos_F1: 0.930923133649901
+
+Train/Acc: 0.5871212121212122
+
+Train/Pos_precision: 0.7185594570579403
+
+Train/Pos_recall: 0.5871212121212122
+
+Train/Pos_F1: 0.592070190188758
+
