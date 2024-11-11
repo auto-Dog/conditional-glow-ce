@@ -188,7 +188,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
         inference_optimizer.step()
         if iter%10 == 0:
             print(f'Mean Absolute grad: {torch.mean(torch.abs(img_t.grad))}')
-    out = model(img_cvd_batch,out_z,reverse=True)
+    out,nll = model(img_cvd_batch,out_z,reverse=True)
     print(out.shape)    # debug
     # img_out = img_t.clone()
     # inference_criterion = conditionP()
