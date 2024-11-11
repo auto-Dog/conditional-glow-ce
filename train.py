@@ -76,7 +76,7 @@ train_val_percent = 0.8
 # valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch)
 trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch)
 valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch)
-# inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
+inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
 
 # train_size = int(len(trainset) * train_val_percent)   # not suitable for ImageNet subset
 # val_size = len(trainset) - train_size
@@ -91,6 +91,7 @@ valloader = torch.utils.data.DataLoader(valset,batch_size=args.batchsize,shuffle
 
 # model = ViT('ColorViT', pretrained=False,image_size=32,patches=4,num_layers=6,num_heads=6,num_classes=4*4*3)
 model = CondGlowModel(args)
+model = nn.DataParallel(model,device_ids=list(range(torch.cuda.device_count())))
 model = model.cuda()
 
 criterion = nn.MSELoss()
