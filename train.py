@@ -40,18 +40,18 @@ num_classes = 6
 parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT')
 parser.add_argument('--lr',type=float, default=1e-4)
 parser.add_argument('--patch',type=int, default=4)
-parser.add_argument('--size',type=int, default=64)
+parser.add_argument('--size',type=int, default=32)
 parser.add_argument('--t', type=float, default=0.5)
 parser.add_argument('--save_interval', type=int, default=5)
 parser.add_argument('--test_fold','-f',type=int)
-parser.add_argument('--batchsize',type=int,default=64)
+parser.add_argument('--batchsize',type=int,default=256)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 # C-Glow parameters
-parser.add_argument("--x_size", type=tuple, default=(3,64,64))
-parser.add_argument("--y_size", type=tuple, default=(3,64,64))
+parser.add_argument("--x_size", type=tuple, default=(3,32,32))
+parser.add_argument("--y_size", type=tuple, default=(3,32,32))
 parser.add_argument("--x_hidden_channels", type=int, default=128)
-parser.add_argument("--x_hidden_size", type=int, default=64)
+parser.add_argument("--x_hidden_size", type=int, default=32)
 parser.add_argument("--y_hidden_channels", type=int, default=256)
 parser.add_argument("-K", "--flow_depth", type=int, default=8)
 parser.add_argument("-L", "--num_levels", type=int, default=3)
@@ -72,10 +72,10 @@ train_val_percent = 0.8
 
 # trainset = CVDcifar('./',train=True,download=True,patch_size=args.patch)
 # testset = CVDcifar('./',train=False,download=True,patch_size=args.patch)
-trainset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
-valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch,img_size=args.size)
-# trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size)
-# valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size)
+# trainset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
+# valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch,img_size=args.size)
+trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size)
+valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size)
 # inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
 
 # train_size = int(len(trainset) * train_val_percent)   # not suitable for ImageNet subset
@@ -97,7 +97,7 @@ model = model.cuda()
 criterion = nn.MSELoss()
 optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr, weight_decay=0.1)
 
-lrsch = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[7,20],gamma=0.3)
+lrsch = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[10,20],gamma=0.3)
 logger.auto_backup('./')
 
 def train(trainloader, model, criterion, optimizer, lrsch, logger, args, epoch):
