@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import numpy as np
-import modules
+from . import modules
 
 
 class CondGlowStep(nn.Module):
