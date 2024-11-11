@@ -56,10 +56,10 @@ class CVDcifar(CIFAR10):
         return img, patch, img_target, patch_target # CVD image, CVD patch, image target, patch target
     
 class CVDImageNet(ImageFolder):
-    def __init__(self, root: str, split: str = "train", patch_size=4, **kwargs: Any) -> None:
+    def __init__(self, root: str, split: str = "train", patch_size=4, img_size=64,**kwargs: Any) -> None:
         target_path = os.path.join(root,split)
         super().__init__(target_path, **kwargs)
-        self.image_size = 64
+        self.image_size = img_size
         self.patch_size = patch_size
         self.my_transform = transforms.Compose(
             [
@@ -91,5 +91,5 @@ class CVDImageNet(ImageFolder):
         return img, patch, img_target, patch_target # CVD image, CVD patch, image target, patch target
     
 class CVDPlace(CVDImageNet):
-    def __init__(self, root: str, split: str = "train", patch_size=4, **kwargs: Any) -> None:
-        super().__init__(root, split, patch_size, **kwargs)
+    def __init__(self, root: str, split: str = "train", patch_size=4, img_size=64,**kwargs: Any) -> None:
+        super().__init__(root, split, patch_size, img_size,**kwargs)

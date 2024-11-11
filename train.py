@@ -40,7 +40,7 @@ num_classes = 6
 parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT')
 parser.add_argument('--lr',type=float, default=1e-4)
 parser.add_argument('--patch',type=int, default=4)
-parser.add_argument('--size',type=int, default=32)
+parser.add_argument('--size',type=int, default=64)
 parser.add_argument('--t', type=float, default=0.5)
 parser.add_argument('--save_interval', type=int, default=5)
 parser.add_argument('--test_fold','-f',type=int)
@@ -72,11 +72,11 @@ train_val_percent = 0.8
 
 # trainset = CVDcifar('./',train=True,download=True,patch_size=args.patch)
 # testset = CVDcifar('./',train=False,download=True,patch_size=args.patch)
-trainset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subtrain',patch_size=args.patch)
-valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch)
-# trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch)
-# valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch)
-inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
+trainset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
+valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch,img_size=args.size)
+# trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size)
+# valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size)
+# inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
 
 # train_size = int(len(trainset) * train_val_percent)   # not suitable for ImageNet subset
 # val_size = len(trainset) - train_size
@@ -229,7 +229,7 @@ if args.test == True:
     finaltestset = CVDcifar('./',train=False,download=True)
     finaltestloader = torch.utils.data.DataLoader(finaltestset,batch_size=args.batchsize,shuffle = False,num_workers=8)
     model.load_state_dict(torch.load(pth_location, map_location='cpu'))
-    sample_enhancement(model,inferenceloader,-1)
+    sample_enhancement(model,None,-1)
     # testing(finaltestloader,model,criterion,optimizer,lrsch,logger,args)
 else:
     for i in range(args.epoch):
@@ -237,7 +237,7 @@ else:
         # sample_enhancement(model,inferenceloader,i) # debug
         train(trainloader, model,criterion,optimizer,lrsch,logger,args,i)
         score, model_save = validate(valloader,model,criterion,optimizer,lrsch,logger,args)
-        sample_enhancement(model,inferenceloader,i)
+        sample_enhancement(model,None,i)
         if score > auc:
             auc = score
             torch.save(model_save, pth_location)
