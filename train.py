@@ -47,6 +47,7 @@ parser.add_argument('--test_fold','-f',type=int)
 parser.add_argument('--batchsize',type=int,default=256)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
+parser.add_argument('--dataset', type=str, default='/kaggle/input/imagenet1k-subset-100k-train-and-10k-val')
 # C-Glow parameters
 parser.add_argument("--x_size", type=tuple, default=(3,32,32))
 parser.add_argument("--y_size", type=tuple, default=(3,32,32))
@@ -72,8 +73,8 @@ train_val_percent = 0.8
 
 # trainset = CVDcifar('./',train=True,download=True,patch_size=args.patch)
 # testset = CVDcifar('./',train=False,download=True,patch_size=args.patch)
-trainset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
-valset = CVDImageNet('/kaggle/input/imagenet1k-subset-100k-train-and-10k-val',split='imagenet_subval',patch_size=args.patch,img_size=args.size)
+trainset = CVDImageNet(args.dataset,split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
+valset = CVDImageNet(args.dataset,split='imagenet_subval',patch_size=args.patch,img_size=args.size)
 # trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size)
 # valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size)
 # inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
@@ -235,8 +236,8 @@ if args.test == True:
 else:
     for i in range(args.epoch):
         print("===========Epoch:{}==============".format(i))
-        # if i==0:
-        #     sample_enhancement(model,None,i,args) # debug
+        if i==0:
+            sample_enhancement(model,None,i,args) # debug
         train(trainloader, model,criterion,optimizer,lrsch,logger,args,i)
         score, model_save = validate(valloader,model,criterion,optimizer,lrsch,logger,args)
         sample_enhancement(model,None,i,args)
