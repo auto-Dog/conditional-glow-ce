@@ -38,13 +38,13 @@ num_classes = 6
 
 # argparse here
 parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT')
-parser.add_argument('--lr',type=float, default=1e-4)
+parser.add_argument('--lr',type=float, default=5e-4)
 parser.add_argument('--patch',type=int, default=4)
 parser.add_argument('--size',type=int, default=32)
 parser.add_argument('--t', type=float, default=0.5)
 parser.add_argument('--save_interval', type=int, default=5)
 parser.add_argument('--test_fold','-f',type=int)
-parser.add_argument('--batchsize',type=int,default=256)
+parser.add_argument('--batchsize',type=int,default=64)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--dataset', type=str, default='/kaggle/input/imagenet1k-subset-100k-train-and-10k-val')
@@ -54,16 +54,17 @@ parser.add_argument("--y_size", type=tuple, default=(3,32,32))
 parser.add_argument("--x_hidden_channels", type=int, default=128)
 parser.add_argument("--x_hidden_size", type=int, default=32)
 parser.add_argument("--y_hidden_channels", type=int, default=256)
-parser.add_argument("-K", "--flow_depth", type=int, default=8)
+parser.add_argument("-K", "--flow_depth", type=int, default=32)
 parser.add_argument("-L", "--num_levels", type=int, default=3)
 parser.add_argument("--learn_top", type=bool, default=False)
 parser.add_argument("--x_bins", type=float, default=256.0)  # noise setting, to make input continues-like
 parser.add_argument("--y_bins", type=float, default=256.0)
+parser.add_argument("--prefix", type=str, default='K32_b64')
 args = parser.parse_args()
 
 ### write model configs here
 save_root = './run'
-pth_location = './Models/model_new.pth'
+pth_location = './Models/model_'+args.prefix+'.pth'
 logger = Logger(save_root)
 logger.global_step = 0
 n_splits = 5
@@ -85,7 +86,7 @@ valset = CVDImageNet(args.dataset,split='imagenet_subval',patch_size=args.patch,
 print(f'Dataset Information: Training Samples:{len(trainset)}, Validating Samples:{len(valset)}')
 
 trainloader = torch.utils.data.DataLoader(trainset,batch_size=args.batchsize,shuffle = True)
-valloader = torch.utils.data.DataLoader(valset,batch_size=args.batchsize,shuffle = True)
+valloader = torch.utils.data.DataLoader(valset,batch_size=args.batchsize*4,shuffle = True)
 # testloader = torch.utils.data.DataLoader(testset,batch_size=args.batchsize,shuffle = False)
 # inferenceloader = torch.utils.data.DataLoader(inferenceset,batch_size=args.batchsize,shuffle = False,)
 # trainval_loader = {'train' : trainloader, 'valid' : validloader}
@@ -96,9 +97,14 @@ model = CondGlowModel(args)
 model = model.cuda()
 
 criterion = nn.MSELoss()
-optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr, weight_decay=0.1)
+# optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=args.lr, weight_decay=0.1)
 
-lrsch = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[10,20],gamma=0.3)
+# Update 11.15
+optimizer = torch.optim.Adamax(model.parameters(), lr=args.lr, weight_decay=5e-5)
+lr_lambda = lambda epoch: min(1.0, (epoch + 1)/5.)  # noqa
+lrsch = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
+
+# lrsch = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[10,20],gamma=0.3)
 logger.auto_backup('./')
 
 def train(trainloader, model, criterion, optimizer, lrsch, logger, args, epoch):
@@ -216,7 +222,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     img_diff = (img_out_array != ori_out_array)*1.0
     img_out_array = np.clip(np.hstack([ori_out_array,recolor_out_array,img_out_array,img_diff]),0.0,1.0)
     plt.imshow(img_out_array)
-    plt.savefig('./run/'+f'sample_b8_e{epoch}.png')
+    plt.savefig('./run/'+f'sample_{args.prefix}_e{epoch}.png')
 
 
 
