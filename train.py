@@ -44,7 +44,7 @@ parser.add_argument('--size',type=int, default=32)
 parser.add_argument('--t', type=float, default=0.5)
 parser.add_argument('--save_interval', type=int, default=5)
 parser.add_argument('--test_fold','-f',type=int)
-parser.add_argument('--batchsize',type=int,default=64)
+parser.add_argument('--batchsize',type=int,default=8)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--dataset', type=str, default='/kaggle/input/imagenet1k-subset-100k-train-and-10k-val')
@@ -54,7 +54,7 @@ parser.add_argument("--y_size", type=tuple, default=(3,32,32))
 parser.add_argument("--x_hidden_channels", type=int, default=128)
 parser.add_argument("--x_hidden_size", type=int, default=32)
 parser.add_argument("--y_hidden_channels", type=int, default=256)
-parser.add_argument("-K", "--flow_depth", type=int, default=32)
+parser.add_argument("-K", "--flow_depth", type=int, default=8)
 parser.add_argument("-L", "--num_levels", type=int, default=3)
 parser.add_argument("--learn_top", type=bool, default=False)
 parser.add_argument("--x_bins", type=float, default=256.0)  # noise setting, to make input continues-like
@@ -107,6 +107,15 @@ lrsch = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lr_lambda)
 # lrsch = torch.optim.lr_scheduler.MultiStepLR(optimizer,milestones=[10,20],gamma=0.3)
 logger.auto_backup('./')
 
+def add_input_noise(input:torch.Tensor,channel_max=(0.6,0.6,0.025),bins=256):
+    ori_noise = torch.rand_like(input)
+    ori_noise[:,0,:,:] *= channel_max[0]
+    ori_noise[:,1,:,:] *= channel_max[1]
+    ori_noise[:,2,:,:] *= channel_max[2]
+    ori_noise /= bins
+    out = input+ori_noise
+    return out
+
 def train(trainloader, model, criterion, optimizer, lrsch, logger, args, epoch):
     model.train()
     loss_logger = 0.
@@ -115,8 +124,8 @@ def train(trainloader, model, criterion, optimizer, lrsch, logger, args, epoch):
         optimizer.zero_grad()
         img = img.cuda()
         img_target = img_target.cuda()
-        outs,nll = model(img+torch.rand_like(img) / args.x_bins,
-                         img_target+torch.rand_like(img_target) / args.y_bins) 
+        outs,nll = model(add_input_noise(img,bins=args.x_bins),
+                         add_input_noise(img_target,bins=args.y_bins)) 
         # img_target = img_target.cuda()
         # print("opt tensor:",out)
         # ci_rgb = ci_rgb.cuda()
@@ -175,7 +184,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     #     img_cvd:torch.Tensor = img_cvd[0,...].unsqueeze(0)  # shape C,H,W
     #     img_t:torch.Tensor = img[0,...].unsqueeze(0)        # shape C,H,W
     #     break   # 只要第一张
-    image_sample = Image.open('handi_icon.PNG').convert('RGB').resize((args.size,args.size))
+    image_sample = Image.open('flowers.PNG').convert('RGB').resize((args.size,args.size))
     image_sample = torch.tensor(np.array(image_sample)).permute(2,0,1).unsqueeze(0)/255.
     image_sample = image_sample.cuda()
     img_cvd = cvd_process(image_sample)
@@ -185,7 +194,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     img_out = img_t.clone()
     # inference_criterion = nn.MSELoss()
     img_t.requires_grad = True
-    inference_optimizer = torch.optim.SGD(params=[img_t],lr=1e10,momentum=0.3)   # 对输入图像进行梯度下降
+    inference_optimizer = torch.optim.SGD(params=[img_t],lr=1,momentum=0.3)   # 对输入图像进行梯度下降
     for iter in range(100):
         inference_optimizer.zero_grad()
         img_cvd_batch = cvd_process(img_t)
