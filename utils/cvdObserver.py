@@ -74,6 +74,12 @@ class cvdSimulateNet(nn.Module):
         image_xyz = self.einsum_dot_tensor(linear_RGB,self.rgb_to_xyz_mat,)
         image_alms = self.einsum_dot_tensor(image_xyz,self.xyz_to_lms_mat,)
         return image_alms
+    
+    def lRGB_to_alms(self,linear_RGB:torch.tensor):
+        # print(f'Shape {linear_RGB.shape}')   # debug
+        image_xyz = self.einsum_dot_tensor(linear_RGB,self.rgb_to_xyz_mat,)
+        image_alms = self.einsum_dot_tensor(image_xyz,self.xyz_to_lms_mat,)
+        return image_alms
 
 
     def forward(self,image_sRGB):
@@ -91,8 +97,8 @@ class cvdSimulateNet(nn.Module):
         return lms_image_cvd
     
 if __name__ == '__main__':
-    myobserver = cvdSimulateNet(cuda=False,batched_input=True)
-    image_sample_ori = Image.open('C:\\Users\\Administrator\\OneDrive\\CIE_CURVE\\CVD_simulation\\apple.png').convert('RGB')
+    myobserver = cvdSimulateNet(cvd_type='deutan',cuda=False,batched_input=True)
+    image_sample_ori = Image.open('C:\\Users\\Administrator\\OneDrive\\CIE_CURVE\\CVD_simulation\\CVD_test.png').convert('RGB')
     image_sample_ori = torch.tensor(np.array(image_sample_ori)).permute(2,0,1).unsqueeze(0)/255.
     image_sample = image_sample_ori.clone()
     print(image_sample.is_leaf)

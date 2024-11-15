@@ -20,6 +20,8 @@ from tqdm import tqdm
 from dataloaders.pic_data import ImgDataset
 from dataloaders.CVDcifar import CVDcifar,CVDImageNet,CVDPlace
 from network import CondGlowModel
+from network import colorConverter
+from utils.colorNeighbour import colorNeighbour
 from utils.cvdObserver import cvdSimulateNet
 from utils.conditionP import conditionP
 from utils.utility import patch_split,patch_compose
@@ -37,7 +39,7 @@ dataset = 'local'
 num_classes = 6
 
 # argparse here
-parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT')
+parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT_CC')
 parser.add_argument('--lr',type=float, default=1e-4)
 parser.add_argument('--patch',type=int, default=4)
 parser.add_argument('--size',type=int, default=32)
@@ -161,35 +163,48 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     目标： $argmax_{c_i} p(\hat{c}|I^{cvd}c_i^{cvd})$ 
 
     '''
+    model.cuda()
     model.eval()
+    sample_num = 20
     cvd_process = cvdSimulateNet(cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
+    cc_model = colorConverter()
+    cc_model.load_state_dict(torch.load('./Models/equ_transform.pth'))
+    cc_model = cc_model.cuda()
+    img_expand_model = colorNeighbour(out_samples=sample_num)
+    img_expand_model = img_expand_model.cuda()
     # for img,_ in inferenceloader:
     #     img = img.cuda()
     #     img_cvd = cvd_process(img)
     #     img_cvd:torch.Tensor = img_cvd[0,...].unsqueeze(0)  # shape C,H,W
     #     img_t:torch.Tensor = img[0,...].unsqueeze(0)        # shape C,H,W
     #     break   # 只要第一张
-    image_sample = Image.open('handi_icon.PNG').convert('RGB').resize((args.size,args.size))
+    image_sample = Image.open('cvd_test_sample.PNG').convert('RGB').resize((args.size,args.size))
     image_sample = torch.tensor(np.array(image_sample)).permute(2,0,1).unsqueeze(0)/255.
     image_sample = image_sample.cuda()
-    img_cvd = cvd_process(image_sample)
-    img_cvd:torch.Tensor = img_cvd[0,...].unsqueeze(0)  # shape C,H,W
     img_t:torch.Tensor = image_sample[0,...].unsqueeze(0)        # shape C,H,W
-
     img_out = img_t.clone()
-    # inference_criterion = nn.MSELoss()
-    img_t.requires_grad = True
-    inference_optimizer = torch.optim.SGD(params=[img_t],lr=1e10,momentum=0.3)   # 对输入图像进行梯度下降
+    img_n = img_expand_model(img_out)   # 取邻近的20个图片样本
+    inference_optimizer = torch.optim.SGD(cc_model.parameters(),lr=1e20)   # 对输入图像进行梯度下降
+    cc_model.train()
+    last_loss = 0
     for iter in range(100):
         inference_optimizer.zero_grad()
-        img_cvd_batch = cvd_process(img_t)
-        out_z,loss = model(img_cvd_batch,img_out)  # 相当于-log p(img_ori|img_cvd(t))
+        img_t_new = cc_model(img_t) # 调色
+        img_cvd = cvd_process(img_t_new)  # 模拟CVD
+        img_cvd_batch = img_cvd.repeat(sample_num,1,1,1).contiguous()  # 保持跟采样数一致
+        out_z,loss = model(img_cvd_batch,img_n)  # 相当于-log p(img_ori|img_cvd(t))
+        loss = torch.mean(loss)
         # loss = inference_criterion(out,img_out)   
-        loss.backward()
+        loss.backward(retain_graph=True)
         inference_optimizer.step()
-        if iter%10 == 0:
-            print(f'Mean Absolute grad: {torch.mean(torch.abs(img_t.grad))}')
-    out,nll = model(img_cvd_batch,out_z,reverse=True)
+        if iter%10 == 0:    # debug
+            print('NLL:',loss.item()-last_loss)
+            last_loss = loss.item()
+            for name,para in cc_model.named_parameters():
+                print(para.grad[0][0])
+                break
+            print(f'Mean Absolute diff: {torch.mean(torch.abs(img_t_new.clone()-img_out))}')
+    out,nll = model(img_cvd_batch[0].unsqueeze(0),out_z[0].unsqueeze(0),reverse=True)
     # print(out.shape)    # debug
     # img_out = img_t.clone()
     # inference_criterion = conditionP()
@@ -211,12 +226,12 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     recolor_out_array = out.clone()
     recolor_out_array = recolor_out_array.squeeze(0).permute(1,2,0).cpu().detach().numpy()
 
-    img_out_array = img_t.clone()
+    img_out_array = img_t_new.clone()
     img_out_array = img_out_array.squeeze(0).permute(1,2,0).cpu().detach().numpy()
     img_diff = (img_out_array != ori_out_array)*1.0
     img_out_array = np.clip(np.hstack([ori_out_array,recolor_out_array,img_out_array,img_diff]),0.0,1.0)
     plt.imshow(img_out_array)
-    plt.savefig('./run/'+f'sample_b8_e{epoch}.png')
+    plt.savefig('./run/'+f'sample_cc_e{epoch}.png')
 
 
 
