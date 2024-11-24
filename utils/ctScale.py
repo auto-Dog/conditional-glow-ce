@@ -4,7 +4,7 @@ from skimage.transform import resize
 
 def apply_color_transfer(input_thumbnail, output_thumbnail, input_image):
     """
-    Apply the color transfer from the thumbnail pair to the original image.
+    Apply the color transfer from the thumbnail pair to the original image. All in [0-1] range
     
     Args:
         input_thumbnail (ndarray): Input thumbnail image (e.g., resized original image).
@@ -14,10 +14,13 @@ def apply_color_transfer(input_thumbnail, output_thumbnail, input_image):
     Returns:
         ndarray: Color-transferred image.
     """
-    # Ensure all inputs are normalized to [0, 1] for calculations
-    input_thumbnail = input_thumbnail / 255.0
-    output_thumbnail = output_thumbnail / 255.0
-    input_image = input_image / 255.0
+    # # Ensure all inputs are normalized to [0, 1] for calculations
+    # if np.max(input_thumbnail)>1.:
+    #     input_thumbnail = input_thumbnail / 255.0
+    # if np.max(output_thumbnail)>1.:
+    #     output_thumbnail = output_thumbnail / 255.0
+    # if np.max(input_image)>1.:
+    #     input_image = input_image / 255.0
 
     # Resize thumbnails to match original image dimensions for pixel-wise processing
     resized_input_thumbnail = resize(input_thumbnail, input_image.shape[:2], preserve_range=True)
@@ -33,7 +36,7 @@ def apply_color_transfer(input_thumbnail, output_thumbnail, input_image):
 
     # Clip values to valid range and convert back to uint8
     color_transferred_image = np.clip(color_transferred_image, 0, 1)
-    color_transferred_image = (color_transferred_image * 255).astype(np.uint8)
+    # color_transferred_image = (color_transferred_image * 255).astype(np.uint8)
 
     return color_transferred_image
 
