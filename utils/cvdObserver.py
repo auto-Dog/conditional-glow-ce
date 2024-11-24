@@ -82,6 +82,19 @@ class cvdSimulateNet(nn.Module):
         return image_alms
 
 
+    # def quantify_alms(self,image_alms:torch.tensor):
+    #     ''' image_alms：视锥细胞响应，值域0-1.  
+    #     假设环境光最大光子数1e5，等步长量化，即采用aLMS均为1e4点的色差椭球，其轴长为1*1e2/2e5'''
+    #     channel_max=(0.6,0.6,0.025)
+    #     bins=256
+    #     quantify_out = image_alms
+    #     quantify_out[:,0,:,:] = image_alms[:,0,:,:]/channel_max[0]
+    #     quantify_out[:,1,:,:] = image_alms[:,1,:,:]/channel_max[1]
+    #     quantify_out[:,2,:,:] = image_alms[:,2,:,:]/channel_max[2]*bins
+    #     ori_noise /= bins
+    #     out = input+ori_noise
+    #     return out
+
     def forward(self,image_sRGB):
         ''' image RGB: 未经处理的原始图像，值域0-1'''
         if not self.batched_input:

@@ -16,6 +16,7 @@ from PIL import Image
 # from sklearn.model_selection import StratifiedGroupKFold
 
 from utils.logger import Logger
+from utils.ctScale import apply_color_transfer
 from tqdm import tqdm
 from dataloaders.pic_data import ImgDataset
 from dataloaders.CVDcifar import CVDcifar,CVDImageNet,CVDPlace
@@ -47,7 +48,7 @@ parser.add_argument('--test_fold','-f',type=int)
 parser.add_argument('--batchsize',type=int,default=8)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
-parser.add_argument('--dataset', type=str, default='/kaggle/input/imagenet1k-subset-100k-train-and-10k-val')
+parser.add_argument('--dataset', type=str, default='/work/mingjundu/imagenet100k/')
 # C-Glow parameters
 parser.add_argument("--x_size", type=tuple, default=(3,32,32))
 parser.add_argument("--y_size", type=tuple, default=(3,32,32))
@@ -184,7 +185,9 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     #     img_cvd:torch.Tensor = img_cvd[0,...].unsqueeze(0)  # shape C,H,W
     #     img_t:torch.Tensor = img[0,...].unsqueeze(0)        # shape C,H,W
     #     break   # 只要第一张
-    image_sample = Image.open('flowers.PNG').convert('RGB').resize((args.size,args.size))
+    image_sample = Image.open('flowers.PNG').convert('RGB')
+    image_sample_big = np.array(image_sample)   # 缓存大图
+    image_sample = image_sample.resize((args.size,args.size))
     image_sample = torch.tensor(np.array(image_sample)).permute(2,0,1).unsqueeze(0)/255.
     image_sample = image_sample.cuda()
     img_cvd = cvd_process(image_sample)
@@ -194,7 +197,9 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     img_out = img_t.clone()
     # inference_criterion = nn.MSELoss()
     img_t.requires_grad = True
-    inference_optimizer = torch.optim.SGD(params=[img_t],lr=1,momentum=0.3)   # 对输入图像进行梯度下降
+    # inference_optimizer = torch.optim.SGD(params=[img_t],lr=3e-3)   # 对输入图像进行梯度下降
+    # inference_optimizer = torch.optim.SGD(params=[img_t],lr=3e-3,momentum=0.3) # 对输入图像进行梯度下降
+    inference_optimizer = torch.optim.Adam(params=[img_t],lr=3e-2)   # 对输入图像进行梯度下降
     for iter in range(100):
         inference_optimizer.zero_grad()
         img_cvd_batch = cvd_process(img_t)
@@ -225,15 +230,21 @@ def sample_enhancement(model,inferenceloader,epoch,args):
 
     recolor_out_array = out.clone()
     recolor_out_array = recolor_out_array.squeeze(0).permute(1,2,0).cpu().detach().numpy()
+    # recolor_out_array_big = apply_color_transfer(ori_out_array,recolor_out_array,image_sample_big)  # 将小图变换应用到大图
 
     img_out_array = img_t.clone()
     img_out_array = img_out_array.squeeze(0).permute(1,2,0).cpu().detach().numpy()
-    img_diff = (img_out_array != ori_out_array)*1.0
-    img_out_array = np.clip(np.hstack([ori_out_array,recolor_out_array,img_out_array,img_diff]),0.0,1.0)
-    plt.imshow(img_out_array)
+    img_out_array_big = apply_color_transfer(ori_out_array,img_out_array,image_sample_big)
+
+    img_diff = (img_out_array - ori_out_array)*10.0
+    img_diff_big = (img_out_array_big - image_sample_big)*10.0
+    img_all_array = np.clip(np.hstack([ori_out_array,recolor_out_array,img_out_array,img_diff]),0.0,1.0)
+    img_all_array_big = np.clip(np.hstack([image_sample_big,img_out_array_big,img_diff_big]),0.0,1.0)
+    plt.imshow(img_all_array)
     plt.savefig('./run/'+f'sample_{args.prefix}_e{epoch}.png')
-
-
+    plt.cla()
+    plt.imshow(img_all_array_big)
+    plt.savefig('./run/'+f'highres_sample_{args.prefix}_e{epoch}.png')
 
 def log_metric(prefix, logger, loss):
     logger.log_scalar(prefix+'/loss',loss,print=False)
