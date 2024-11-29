@@ -87,8 +87,8 @@ def sample_enhancement(image,model,args):
     '''
     model.eval()
     cvd_process = cvdSimulateNet(cvd_type=args.cvd,cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
-    image_sample = image
-    image_sample_big = image_sample/255.   # 缓存大图
+    image_sample = Image.fromarray(image,mode='RGB')
+    # image_sample_big = np.array(image_sample)/255.   # 缓存大图
     image_sample = image_sample.resize((args.size,args.size))
     image_sample = torch.tensor(np.array(image_sample)).permute(2,0,1).unsqueeze(0)/255.
     image_sample = image_sample.cuda()
