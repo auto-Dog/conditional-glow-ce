@@ -12,6 +12,8 @@ import torchvision.models as models
 from torchvision.datasets import CIFAR10
 from sklearn.metrics import classification_report, roc_auc_score, roc_curve, accuracy_score
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('agg')
 from PIL import Image
 # from sklearn.model_selection import StratifiedGroupKFold
 
@@ -121,7 +123,48 @@ def sample_enhancement(image,model,args):
     # plt.savefig('./run/'+f'highres_sample_{args.prefix}_e{epoch}.png')
 
 def render_ball(color=(0,0,0),):
-    pass
+    # 创建一个灰色背景的角落
+    normalize_color = (color[0]/255., color[1]/255., color[2]/255.)
+    fig = plt.figure(figsize=(5,5))
+    ax = fig.add_subplot(111, projection='3d')
+    ax.set_facecolor((60/255, 60/255, 60/255))
+    # 隐藏坐标轴
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_zticks([])
+    ax.set_xlabel('')
+    ax.set_ylabel('')
+    ax.set_zlabel('')
+    # # 创建三个灰色平面搭建角落
+    # 二元函数定义域平面
+    x = np.linspace(0, 12, 12)
+    y = np.linspace(0, 12, 12)
+    X, Y = np.meshgrid(x, y)
+    # -------------------------------- 绘制 3D 图形 --------------------------------
+    # 设置X、Y、Z面的背景是白色
+    ax.w_xaxis.set_pane_color((0.4,0.4,0.4, 1.0))
+    ax.w_yaxis.set_pane_color((0.8,0.8,0.8, 1.0))
+    ax.w_zaxis.set_pane_color((0.3,0.3,0.3, 1.0))
+
+    # 创建一个指定颜色的球体
+    u = np.linspace(0, 2 * np.pi, 100)
+    v = np.linspace(0, np.pi, 100)
+    x = 5 * np.outer(np.cos(u), np.sin(v)) + 5  # 球体中心在(5, 5, 5)
+    y = 5 * np.outer(np.sin(u), np.sin(v)) + 5
+    z = 5 * np.outer(np.ones(np.size(u)), np.cos(v)) + 5
+    ax.plot_surface(x, y, z, color=normalize_color, linewidth=0)  # 红色球体
+
+    # 设置坐标轴标签
+    ax.set_xlim([0,11])
+    ax.set_ylim([0,11])
+    ax.set_zlim([0,11])
+    # ax.set_aspect(1)
+
+    # 显示图形
+    # plt.show()
+    plt.savefig('tmp.png')
+    image_back = Image.open('tmp.png').convert('RGB')
+    return np.array(image_back)
 
 def render_patch(color=(0,0,0)):
     ''' 生成一个400x600的图像，中心色块为指定颜色。背景颜色为128,128,128'''
@@ -161,6 +204,7 @@ colors_out = []
 for rgb_value_ori in tqdm(colors):
     # 产生指定颜色值色块
     img_patch = render_patch(rgb_value_ori)
+    img_patch = render_ball(rgb_value_ori)
     # 进行色盲模拟和重新上色
     img_recolor = sample_enhancement(img_patch,model,args)
     # 取img_recolor[15:17,15:17]并求平均
@@ -169,6 +213,6 @@ for rgb_value_ori in tqdm(colors):
 colors = np.array(colors)
 colors_out = np.array(colors_out)
 colors_out = np.hstack([colors,colors_out])
-np.savetxt( "colormap.csv", colors_out, delimiter=",") # 保存结果
+np.savetxt( "colormap_sphere.csv", colors_out, delimiter=",") # 保存结果
 
 
