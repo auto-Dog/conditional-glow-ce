@@ -49,6 +49,7 @@ parser.add_argument('--batchsize',type=int,default=8)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--dataset', type=str, default='/work/mingjundu/imagenet100k/')
+parser.add_argument("--cvd", type=str, default='deutan')
 # C-Glow parameters
 parser.add_argument("--x_size", type=str, default="(3,32,32)")
 parser.add_argument("--y_size", type=str, default="(3,32,32)")
@@ -76,12 +77,12 @@ train_val_percent = 0.8
 # os.environ["CUDA_VISIBLE_DEVICES"] = '0,1'
 # skf = StratifiedGroupKFold(n_splits=n_splits)
 
-# trainset = CVDcifar('./',train=True,download=True,patch_size=args.patch)
-# testset = CVDcifar('./',train=False,download=True,patch_size=args.patch)
-trainset = CVDImageNet(args.dataset,split='imagenet_subtrain',patch_size=args.patch,img_size=args.size)
-valset = CVDImageNet(args.dataset,split='imagenet_subval',patch_size=args.patch,img_size=args.size)
-# trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size)
-# valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size)
+# trainset = CVDcifar('./',train=True,download=True,patch_size=args.patch,img_size=args.size,cvd=args.cvd)
+# testset = CVDcifar('./',train=False,download=True,patch_size=args.patch,img_size=args.size,cvd=args.cvd)
+trainset = CVDImageNet(args.dataset,split='imagenet_subtrain',patch_size=args.patch,img_size=args.size,cvd=args.cvd)
+valset = CVDImageNet(args.dataset,split='imagenet_subval',patch_size=args.patch,img_size=args.size,cvd=args.cvd)
+# trainset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='train',patch_size=args.patch,img_size=args.size,cvd=args.cvd)
+# valset = CVDPlace('/work/mingjundu/place_dataset/places365_standard/',split='val',patch_size=args.patch,img_size=args.size,cvd=args.cvd)
 # inferenceset = CIFAR10('./',train=False,download=True,transform=transforms.Compose([transforms.ToTensor(),]))
 
 # train_size = int(len(trainset) * train_val_percent)   # not suitable for ImageNet subset
