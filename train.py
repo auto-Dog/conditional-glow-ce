@@ -63,6 +63,7 @@ parser.add_argument("--y_bins", type=float, default=256.0)
 parser.add_argument("--prefix", type=str, default='K32_b64')
 args = parser.parse_args()
 
+print(args) # show all parameters
 ### write model configs here
 save_root = './run'
 pth_location = './Models/model_'+args.prefix+'.pth'
