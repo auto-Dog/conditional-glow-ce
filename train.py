@@ -50,8 +50,8 @@ parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--dataset', type=str, default='/work/mingjundu/imagenet100k/')
 # C-Glow parameters
-parser.add_argument("--x_size", type=tuple, default=(3,32,32))
-parser.add_argument("--y_size", type=tuple, default=(3,32,32))
+parser.add_argument("--x_size", type=str, default="(3,32,32)")
+parser.add_argument("--y_size", type=str, default="(3,32,32)")
 parser.add_argument("--x_hidden_channels", type=int, default=128)
 parser.add_argument("--x_hidden_size", type=int, default=32)
 parser.add_argument("--y_hidden_channels", type=int, default=256)
@@ -63,6 +63,8 @@ parser.add_argument("--y_bins", type=float, default=256.0)
 parser.add_argument("--prefix", type=str, default='K32_b64')
 args = parser.parse_args()
 
+args.x_size = eval(args.x_size)
+args.y_size = eval(args.y_size)
 print(args) # show all parameters
 ### write model configs here
 save_root = './run'
