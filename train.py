@@ -39,7 +39,7 @@ num_classes = 6
 
 # argparse here
 parser = argparse.ArgumentParser(description='COLOR-ENHANCEMENT')
-parser.add_argument('--lr',type=float, default=5e-4)
+parser.add_argument('--lr',type=float, default=1e-4)
 parser.add_argument('--patch',type=int, default=4)
 parser.add_argument('--size',type=int, default=32)
 parser.add_argument('--t', type=float, default=0.5)
@@ -199,7 +199,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     img_t.requires_grad = True
     # inference_optimizer = torch.optim.SGD(params=[img_t],lr=3e-3)   # 对输入图像进行梯度下降
     # inference_optimizer = torch.optim.SGD(params=[img_t],lr=3e-3,momentum=0.3) # 对输入图像进行梯度下降
-    inference_optimizer = torch.optim.Adam(params=[img_t],lr=3e-2)   # 对输入图像进行梯度下降
+    inference_optimizer = torch.optim.Adam(params=[img_t],lr=3e-3)   # 对输入图像进行梯度下降
     for iter in range(100):
         inference_optimizer.zero_grad()
         img_cvd_batch = cvd_process(img_t)
