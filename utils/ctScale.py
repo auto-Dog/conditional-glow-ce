@@ -26,13 +26,18 @@ def apply_color_transfer(input_thumbnail, output_thumbnail, input_image):
     resized_input_thumbnail = resize(input_thumbnail, input_image.shape[:2], preserve_range=True)
     resized_output_thumbnail = resize(output_thumbnail, input_image.shape[:2], preserve_range=True)
 
-    # Compute color transfer mapping (per channel scaling factor)
-    # Avoid divide-by-zero issues by adding a small epsilon
-    epsilon = 1e-5
-    scaling_factors = (resized_output_thumbnail + epsilon) / (resized_input_thumbnail + epsilon)
+    # # FACTOR BASED
+    # # Compute color transfer mapping (per channel scaling factor)
+    # # Avoid divide-by-zero issues by adding a small epsilon
+    # epsilon = 1e-5
+    # scaling_factors = (resized_output_thumbnail + epsilon) / (resized_input_thumbnail + epsilon)
 
-    # Apply the color transfer scaling factor to the original image
-    color_transferred_image = input_image * scaling_factors
+    # # Apply the color transfer scaling factor to the original image
+    # color_transferred_image = input_image * scaling_factors
+
+    # BIAS BASED
+    bias_map = resized_output_thumbnail - resized_input_thumbnail
+    color_transferred_image = input_image + bias_map
 
     # Clip values to valid range and convert back to uint8
     color_transferred_image = np.clip(color_transferred_image, 0, 1)
