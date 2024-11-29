@@ -142,9 +142,9 @@ def render_ball(color=(0,0,0),):
     X, Y = np.meshgrid(x, y)
     # -------------------------------- 绘制 3D 图形 --------------------------------
     # 设置X、Y、Z面的背景是白色
-    ax.w_xaxis.set_pane_color((0.4,0.4,0.4, 1.0))
-    ax.w_yaxis.set_pane_color((0.8,0.8,0.8, 1.0))
-    ax.w_zaxis.set_pane_color((0.3,0.3,0.3, 1.0))
+    ax.xaxis.set_pane_color((0.4,0.4,0.4, 1.0))
+    ax.yaxis.set_pane_color((0.8,0.8,0.8, 1.0))
+    ax.zaxis.set_pane_color((0.3,0.3,0.3, 1.0))
 
     # 创建一个指定颜色的球体
     u = np.linspace(0, 2 * np.pi, 100)
