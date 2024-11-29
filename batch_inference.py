@@ -163,6 +163,8 @@ def render_ball(color=(0,0,0),):
     # 显示图形
     # plt.show()
     plt.savefig('tmp.png')
+    plt.cla()
+    plt.close("all")
     image_back = Image.open('tmp.png').convert('RGB')
     return np.array(image_back)
 
