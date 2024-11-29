@@ -182,7 +182,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
 
     '''
     model.eval()
-    cvd_process = cvdSimulateNet(cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
+    cvd_process = cvdSimulateNet(cvd_type=args.cvd,cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
     # for img,_ in inferenceloader:
     #     img = img.cuda()
     #     img_cvd = cvd_process(img)

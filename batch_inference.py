@@ -39,7 +39,7 @@ parser.add_argument('--batchsize',type=int,default=8)
 parser.add_argument('--test',type=bool,default=False)
 parser.add_argument('--epoch', type=int, default=50)
 parser.add_argument('--dataset', type=str, default='/work/mingjundu/imagenet100k/')
-parser.add_argument("--cvd", type=str, default='deutan')
+parser.add_argument("--cvd", type=str, default='protan')
 # C-Glow parameters
 parser.add_argument("--x_size", type=str, default="(3,32,32)")
 parser.add_argument("--y_size", type=str, default="(3,32,32)")
@@ -86,7 +86,7 @@ def sample_enhancement(image,model,args):
 
     '''
     model.eval()
-    cvd_process = cvdSimulateNet(cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
+    cvd_process = cvdSimulateNet(cvd_type=args.cvd,cuda=True,batched_input=True) # 保证在同一个设备上进行全部运算
     image_sample = image
     image_sample_big = image_sample/255.   # 缓存大图
     image_sample = image_sample.resize((args.size,args.size))
