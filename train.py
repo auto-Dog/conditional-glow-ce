@@ -189,7 +189,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
     #     img_cvd:torch.Tensor = img_cvd[0,...].unsqueeze(0)  # shape C,H,W
     #     img_t:torch.Tensor = img[0,...].unsqueeze(0)        # shape C,H,W
     #     break   # 只要第一张
-    image_sample = Image.open('apple-icon.png').convert('RGB')
+    image_sample = Image.open('flowers.PNG').convert('RGB')
     image_sample_big = np.array(image_sample)/255.   # 缓存大图
     image_sample = image_sample.resize((args.size,args.size))
     image_sample = torch.tensor(np.array(image_sample)).permute(2,0,1).unsqueeze(0)/255.
