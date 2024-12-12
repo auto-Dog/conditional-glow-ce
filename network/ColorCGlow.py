@@ -179,13 +179,8 @@ class CondGlowModel(nn.Module):
             with torch.no_grad():
                 mean, logs = self.prior()
                 if y is None:
-                    for i in range(10):
-                        z_i = modules.GaussianDiag.batchsample(x.size(0), mean, logs, eps_std)
-                        y_i, logdet = self.flow(x, z_i, eps_std=eps_std, reverse=True)
-                        y = y_i if i==0 else y+y_i
-                    y = y/10
-                else:
-                    y, logdet = self.flow(x, y, eps_std=eps_std, reverse=True)
+                    y = modules.GaussianDiag.batchsample(x.size(0), mean, logs, eps_std)
+                y, logdet = self.flow(x, y, eps_std=eps_std, reverse=True)
             return y, logdet
 
 if __name__ == '__main__':

@@ -201,7 +201,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
 
     img_out = img_t.clone()
     img_out_delta = img_out.repeat(sample_num,1,1,1).contiguous()  # 保持跟采样数一致
-    img_bias = torch.rand(sample_num, 1, 1, 1).cuda() * 0.2 - 0.1  # 生成 -0.1 到 0.1 之间的随机偏移量
+    img_bias = torch.rand(sample_num, 3, 1, 1).cuda() * 0.2 - 0.1  # 生成 -0.1 到 0.1 之间的随机偏移量
     img_out_delta = img_out_delta + img_bias  # 将偏移量加到 img_out_delta 上，维度自动广播
     img_out_delta[img_out_delta<0] = 0.
     # inference_criterion = nn.MSELoss()
@@ -220,7 +220,7 @@ def sample_enhancement(model,inferenceloader,epoch,args):
         inference_optimizer.step()
         if iter%10 == 0:
             print(f'Mean Absolute grad: {torch.mean(torch.abs(img_t.grad))}, nll:{loss.item()}')
-    out,nll = model(img_cvd,reverse=True)
+    out,nll = model(img_cvd,reverse=True)   # 存在问题，逆向生成大概率上色不准
     # print(out.shape)    # debug
     # img_out = img_t.clone()
     # inference_criterion = conditionP()
